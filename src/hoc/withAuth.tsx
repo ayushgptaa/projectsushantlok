@@ -3,8 +3,8 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function withAuth(Component) {
-    return function ProtectedRoute({ ...props }) {
+export default function withAuth(Component: any) {
+    return function ProtectedRoute({ ...props }: any) {
         const router = useRouter();
         const password = localStorage.getItem('password');
         const userIsAuthenticated = password !== null || '';

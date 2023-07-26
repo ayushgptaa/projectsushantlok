@@ -4,12 +4,12 @@ import withAuth from '@/hoc/withAuth';
 
 import styles from './index.module.scss';
 
-const Auth = () => {
+function Auth() {
     return (
         <main className={styles.container}>
             <Message text="Access granted" color="#00ff19" />
         </main>
     );
-};
+}
 
 export default withAuth(Auth);
