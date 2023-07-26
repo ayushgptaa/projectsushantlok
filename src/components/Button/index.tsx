@@ -1,6 +1,10 @@
 import styles from './index.module.scss';
 
-const Button = ({ text }) => {
+type ButtonType = {
+    text: string;
+};
+
+const Button = ({ text }: ButtonType) => {
     return <button className={styles.button}>{text}</button>;
 };
 
