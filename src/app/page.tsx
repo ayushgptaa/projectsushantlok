@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-import Input from '../components/Input';
+import Input from '@/components/Input';
+import Message from '@/components/message';
 
 import { authenticate } from '@/utils/auth';
 
@@ -31,7 +32,13 @@ export default function Home() {
     const router = useRouter();
 
     return (
-        <main>
+        <main
+            style={{
+                display: 'flex',
+                justifyContent: 'center',
+                height: '100%',
+                alignItems: 'center',
+            }}>
             {!showError && (
                 <Input
                     password={password}
@@ -39,7 +46,8 @@ export default function Home() {
                     formHandler={formHandler}
                 />
             )}
-            {showError && <p>Access Denited</p>}
+
+            {showError && <Message text="Access Denied" color="red" />}
         </main>
     );
 }
