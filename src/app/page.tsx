@@ -22,10 +22,12 @@ export default function Home() {
 
     useEffect(() => {
         if (showError) {
-            setTimeout(() => {
+            const timer = setTimeout(() => {
                 setShowError(false);
                 setPassword('');
             }, 4000);
+
+            return () => clearTimeout(timer);
         }
     }, [showError]);
 
