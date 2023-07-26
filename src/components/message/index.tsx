@@ -1,6 +1,11 @@
 import styles from './index.module.scss';
 
-const Message = ({ text, color }) => {
+type MessageProps = {
+    text: string;
+    color: string;
+};
+
+const Message = ({ text, color }: MessageProps) => {
     return (
         <div
             className={styles.container}

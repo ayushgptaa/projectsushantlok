@@ -11,7 +11,7 @@ export default function Home() {
     const [password, setPassword] = useState('');
     const [showError, setShowError] = useState(false);
 
-    const formHandler = e => {
+    const formHandler = (e: any) => {
         e.preventDefault();
         if (authenticate(password)) {
             router.push('/auth');
@@ -42,7 +42,7 @@ export default function Home() {
             {!showError && (
                 <Input
                     password={password}
-                    inputHandler={e => setPassword(e?.target?.value)}
+                    inputHandler={(e: any) => setPassword(e?.target?.value)}
                     formHandler={formHandler}
                 />
             )}
