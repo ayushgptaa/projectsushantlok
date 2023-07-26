@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-import Input from '@/components/Input';
+import PasswordForm from '@/components/PasswordForm';
 import Message from '@/components/message';
 
 import { authenticate } from '@/utils/auth';
@@ -40,7 +40,7 @@ export default function Home() {
                 alignItems: 'center',
             }}>
             {!showError && (
-                <Input
+                <PasswordForm
                     password={password}
                     inputHandler={(e: any) => setPassword(e?.target?.value)}
                     formHandler={formHandler}

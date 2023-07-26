@@ -1,24 +1,29 @@
-import React from 'react';
-
 import styles from './index.module.scss';
 
-const Input = ({ password, inputHandler, formHandler }) => {
+type InputType = {
+    label: string;
+    name: string;
+    type: string;
+    value: any;
+    inputHandler: any;
+};
+
+const Input = ({ label, name, type, value, inputHandler }: InputType) => {
     return (
-        <form onSubmit={formHandler}>
-            <div className={styles.inputContainer}>
-                <label htmlFor="password">Enter Password</label>
-                [
-                <input
-                    id="password"
-                    type="password"
-                    autoComplete="off"
-                    className={styles.input}
-                    value={password}
-                    onChange={inputHandler}
-                />
-                ]
-            </div>
-        </form>
+        <>
+            <label htmlFor={name}>{label}</label>
+            [
+            <input
+                id={name}
+                name={name}
+                type={type}
+                autoComplete="off"
+                className={styles.input}
+                value={value}
+                onChange={inputHandler}
+            />
+            ]
+        </>
     );
 };
 
