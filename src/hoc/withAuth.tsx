@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function withAuth(Component: any) {
@@ -8,7 +8,8 @@ export default function withAuth(Component: any) {
         const router = useRouter();
 
         const password = typeof window !== 'undefined' && localStorage.getItem('password');
-        const userIsAuthenticated = password !== null || '';
+
+        const userIsAuthenticated = password && password !== null;
 
         useEffect(() => {
             if (!userIsAuthenticated) {
