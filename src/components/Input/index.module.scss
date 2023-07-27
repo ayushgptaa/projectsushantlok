@@ -3,5 +3,13 @@
     outline: none;
     padding: 5px;
     font-size: 20px;
-    width: 120px;
+    width: 250px;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
 }

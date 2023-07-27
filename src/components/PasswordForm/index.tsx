@@ -11,15 +11,13 @@ type PasswordFormType = {
 const PasswordForm = ({ password, inputHandler, formHandler }: PasswordFormType) => {
     return (
         <form onSubmit={formHandler}>
-            <div className={styles.inputContainer}>
-                <Input
-                    label="Enter Password"
-                    name="password"
-                    type="password"
-                    value={password}
-                    inputHandler={inputHandler}
-                />
-            </div>
+            <Input
+                label="Enter Password"
+                name="password"
+                type="password"
+                value={password}
+                inputHandler={inputHandler}
+            />
         </form>
     );
 };

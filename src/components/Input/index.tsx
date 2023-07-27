@@ -10,20 +10,24 @@ type InputType = {
 
 const Input = ({ label, name, type, value, inputHandler }: InputType) => {
     return (
-        <>
-            <label htmlFor={name}>{label}</label>
-            [
-            <input
-                id={name}
-                name={name}
-                type={type}
-                autoComplete="off"
-                className={styles.input}
-                value={value}
-                onChange={inputHandler}
-            />
-            ]
-        </>
+        <div className={styles.inputContainer}>
+            <label htmlFor={name} style={{ textAlign: 'center', maxWidth: '200px' }}>
+                {label}
+            </label>
+            <div>
+                <span>[</span>
+                <input
+                    id={name}
+                    name={name}
+                    type={type}
+                    autoComplete="off"
+                    className={styles.input}
+                    value={value}
+                    onChange={inputHandler}
+                />
+                <span>]</span>
+            </div>
+        </div>
     );
 };
 
