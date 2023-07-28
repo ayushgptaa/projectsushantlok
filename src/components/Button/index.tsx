@@ -4,9 +4,9 @@ type ButtonType = {
     text: string;
 };
 
-const Button = ({ text }: ButtonType) => {
+const Button = ({ text, ...rest }: ButtonType) => {
     return (
-        <button className={styles.button} type="submit">
+        <button className={styles.button} type="submit" {...rest}>
             {text}
         </button>
     );

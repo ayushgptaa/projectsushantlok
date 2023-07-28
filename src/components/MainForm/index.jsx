@@ -50,6 +50,7 @@ const MainForm = () => {
         suggestions: '',
         time: '',
     });
+    const [btnText, setBtnText] = useState('Submit');
 
     const router = useRouter();
 
@@ -65,7 +66,7 @@ const MainForm = () => {
     };
 
     const saveFormResponse = async formData => {
-        console.log(formData);
+        setBtnText('Loading...');
         const res = await fetch('https://project-x-ec7e7-default-rtdb.firebaseio.com/formResponses.json', {
             method: 'POST',
             headers: {
@@ -166,7 +167,7 @@ const MainForm = () => {
                     inputHandler={inputHandler}
                 />
 
-                <Button text="Submit" />
+                <Button text={btnText} disabled={btnText === 'Loading...'} />
             </form>
         </>
     );
