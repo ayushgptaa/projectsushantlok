@@ -20,7 +20,7 @@ const PasswordForm = ({ password, inputHandler, formHandler }: PasswordFormType)
                 inputHandler={inputHandler}
             />
 
-            <div style={{ marginTop: '50px', margin: 'auto', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ marginTop: '20px !important', margin: 'auto', display: 'flex', justifyContent: 'center' }}>
                 <Button text="Submit" />
             </div>
         </form>
