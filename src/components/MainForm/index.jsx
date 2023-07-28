@@ -7,7 +7,6 @@ import Input from '../Input';
 import styles from './index.module.scss';
 
 import Button from '../Button';
-import Checkbox from '../Checkbox';
 import Select from '../Select';
 
 // Input = ({ label, name, type, value, inputHandler }: InputType)
