@@ -48,6 +48,7 @@ const MainForm = () => {
         stay: '',
         capacity: '',
         suggestions: '',
+        time: '',
     });
 
     const router = useRouter();
@@ -78,6 +79,7 @@ const MainForm = () => {
                 localStorage.removeItem('password');
                 localStorage.setItem('completed', 'true');
                 router.push('/');
+                window.open('https://wa.me/${phoneNumber}?text=hello');
             }
         }
     };
@@ -154,6 +156,14 @@ const MainForm = () => {
                     name="suggestions"
                     type="text"
                     value={formData?.suggestions}
+                    inputHandler={inputHandler}
+                />
+
+                <Input
+                    label="Time of arrival"
+                    name="time"
+                    type="text"
+                    value={formData?.time}
                     inputHandler={inputHandler}
                 />
 
