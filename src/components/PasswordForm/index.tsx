@@ -1,4 +1,5 @@
 import Input from '../Input';
+import Button from '../Button';
 
 import styles from './index.module.scss';
 
@@ -18,6 +19,10 @@ const PasswordForm = ({ password, inputHandler, formHandler }: PasswordFormType)
                 value={password}
                 inputHandler={inputHandler}
             />
+
+            <div style={{ marginTop: '50px', margin: 'auto', display: 'flex', justifyContent: 'center' }}>
+                <Button text="Submit" />
+            </div>
         </form>
     );
 };
