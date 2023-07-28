@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
 import PasswordForm from '@/components/PasswordForm';
@@ -7,6 +7,8 @@ import Message from '@/components/message';
 import TypingElement from '@/components/TypingElement';
 
 import { authenticate } from '@/utils/auth';
+
+import ReactAudioPlayer from 'react-audio-player';
 
 export default function Home() {
     const router = useRouter();

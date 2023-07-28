@@ -1,11 +1,6 @@
-// import type { Metadata } from 'next';
 import './global.scss';
-// import { Inter } from 'next/font/google';
 
-// export const metadata: Metadata = {
-//     title: 'Project Sushant Lok',
-//     description: 'Welcome to Project Sushant Lok - Biggest event is Sushant lok',
-// };
+import AudioComponent from '@/components/AudioComponent';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -34,7 +29,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
                 <meta property="twitter:image" content="https://projectsushantlok.site/janeesh.jpg" />
             </head>
-            <body>{children}</body>
+            <body>
+                {children}
+
+                <AudioComponent />
+            </body>
         </html>
     );
 }
