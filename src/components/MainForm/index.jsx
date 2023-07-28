@@ -79,7 +79,6 @@ const MainForm = () => {
                 localStorage.removeItem('password');
                 localStorage.setItem('completed', 'true');
                 router.push('/');
-                window.open('https://wa.me/${phoneNumber}?text=hello');
             }
         }
     };
