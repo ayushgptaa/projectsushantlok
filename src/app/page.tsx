@@ -8,8 +8,6 @@ import TypingElement from '@/components/TypingElement';
 
 import { authenticate } from '@/utils/auth';
 
-import ReactAudioPlayer from 'react-audio-player';
-
 export default function Home() {
     const router = useRouter();
 
