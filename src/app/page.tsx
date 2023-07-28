@@ -8,6 +8,8 @@ import Message from '@/components/message';
 import { authenticate } from '@/utils/auth';
 
 export default function Home() {
+    const router = useRouter();
+
     const [password, setPassword] = useState('');
     const [showError, setShowError] = useState(false);
 
@@ -30,8 +32,6 @@ export default function Home() {
             return () => clearTimeout(timer);
         }
     }, [showError]);
-
-    const router = useRouter();
 
     return (
         <main
