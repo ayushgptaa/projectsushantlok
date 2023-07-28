@@ -19,7 +19,7 @@ const TypingElement = ({ message }) => {
         return () => clearInterval(typingInterval);
     }, [message]);
 
-    return <div style={{ fontSize: '48px', textAlign: 'center' }}>{typedText}</div>;
+    return <div style={{ fontSize: '36px', textAlign: 'center' }}>{typedText}</div>;
 };
 
 export default TypingElement;
