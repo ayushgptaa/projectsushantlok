@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 
 import PasswordForm from '@/components/PasswordForm';
 import Message from '@/components/message';
+import TypingElement from '@/components/TypingElement';
 
 import { authenticate } from '@/utils/auth';
 
@@ -12,6 +13,7 @@ export default function Home() {
 
     const [password, setPassword] = useState('');
     const [showError, setShowError] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
 
     const formHandler = (e: any) => {
         e.preventDefault();
@@ -21,6 +23,15 @@ export default function Home() {
             setShowError(true);
         }
     };
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const status = localStorage.getItem('completed');
+            if (status === 'true') {
+                setShowMessage(true);
+            }
+        }
+    }, []);
 
     useEffect(() => {
         if (showError) {
@@ -41,15 +52,21 @@ export default function Home() {
                 height: '80vh',
                 alignItems: 'center',
             }}>
-            {!showError && (
-                <PasswordForm
-                    password={password}
-                    inputHandler={(e: any) => setPassword(e?.target?.value)}
-                    formHandler={formHandler}
-                />
+            {!showMessage && (
+                <>
+                    {!showError && (
+                        <PasswordForm
+                            password={password}
+                            inputHandler={(e: any) => setPassword(e?.target?.value)}
+                            formHandler={formHandler}
+                        />
+                    )}
+
+                    {showError && <Message text="Access Denied" color="red" />}
+                </>
             )}
 
-            {showError && <Message text="Access Denied" color="red" />}
+            {showMessage && <TypingElement message="Seee you soon..." />}
         </main>
     );
 }

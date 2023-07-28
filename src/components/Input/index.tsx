@@ -6,12 +6,17 @@ type InputType = {
     type: string;
     value: any;
     inputHandler: any;
+    secondarytext: string;
 };
 
-const Input = ({ label, name, type, value, inputHandler }: InputType) => {
+const Input = ({ label, name, type, value, inputHandler, secondarytext }: InputType) => {
     return (
         <div className={styles.inputContainer}>
-            <label htmlFor={name}>{label}</label>
+            <label htmlFor={name}>
+                {label}
+                <span style={{ color: 'red' }}>{secondarytext && `(${secondarytext})`}</span>
+            </label>
+
             <div>
                 <span>[</span>
                 <input
