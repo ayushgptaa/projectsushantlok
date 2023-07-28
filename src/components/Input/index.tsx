@@ -6,7 +6,7 @@ type InputType = {
     type: string;
     value: any;
     inputHandler: any;
-    secondarytext: string;
+    secondarytext?: string;
 };
 
 const Input = ({ label, name, type, value, inputHandler, secondarytext }: InputType) => {
