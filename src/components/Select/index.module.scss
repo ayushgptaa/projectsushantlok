@@ -1,0 +1,17 @@
+.selectContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.select {
+    padding: 10px;
+    font-size: 16px;
+    width: 180px;
+}
+
+.option {
+    padding: 10px;
+    font-size: 16px;
+}

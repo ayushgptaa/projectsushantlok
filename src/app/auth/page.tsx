@@ -22,7 +22,7 @@ function Auth() {
     // }, [showMessage]);
 
     return (
-        <main>
+        <section suppressHydrationWarning>
             {/* {showMessage && (
                 <div className={styles.message}>
                     <Message text="Access granted" color="#00ff19" />
@@ -31,7 +31,7 @@ function Auth() {
             {!showMessage && <MainForm />} */}
 
             <MainForm />
-        </main>
+        </section>
     );
 }
 

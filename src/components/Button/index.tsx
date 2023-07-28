@@ -5,7 +5,11 @@ type ButtonType = {
 };
 
 const Button = ({ text }: ButtonType) => {
-    return <button className={styles.button}>{text}</button>;
+    return (
+        <button className={styles.button} type="submit">
+            {text}
+        </button>
+    );
 };
 
 export default Button;

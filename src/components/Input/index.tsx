@@ -11,12 +11,11 @@ type InputType = {
 const Input = ({ label, name, type, value, inputHandler }: InputType) => {
     return (
         <div className={styles.inputContainer}>
-            <label htmlFor={name} style={{ textAlign: 'center', maxWidth: '200px' }}>
-                {label}
-            </label>
+            <label htmlFor={name}>{label}</label>
             <div>
                 <span>[</span>
                 <input
+                    required
                     id={name}
                     name={name}
                     type={type}
