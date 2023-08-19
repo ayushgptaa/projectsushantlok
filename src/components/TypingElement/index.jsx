@@ -4,19 +4,25 @@ const TypingElement = ({ message }) => {
     const [typedText, setTypedText] = useState('');
 
     useEffect(() => {
-        let currentIndex = 0;
-        const messageLength = message.length - 1;
+        if (message) {
+            let currentIndex = 0;
 
-        const typingInterval = setInterval(() => {
-            setTypedText(prevTypedText => prevTypedText + message[currentIndex]);
-            currentIndex++;
+            const messageLength = message.length - 1;
 
-            if (currentIndex === messageLength) {
-                clearInterval(typingInterval);
-            }
-        }, 100);
+            const typingInterval = setInterval(() => {
+                setTypedText(prevTypedText => {
+                    console.log(currentIndex);
+                    return prevTypedText + message[currentIndex];
+                });
+                currentIndex++;
 
-        return () => clearInterval(typingInterval);
+                if (currentIndex === messageLength) {
+                    clearInterval(typingInterval);
+                }
+            }, 300);
+
+            return () => clearInterval(typingInterval);
+        }
     }, [message]);
 
     return <div style={{ fontSize: '36px', textAlign: 'center' }}>{typedText}</div>;

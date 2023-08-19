@@ -1,7 +1,5 @@
 import './global.scss';
 
-import AudioComponent from '@/components/AudioComponent';
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
@@ -29,11 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
                 <meta property="twitter:image" content="https://projectsushantlok.site/metaImage.png" />
             </head>
-            <body>
-                {children}
-
-                <AudioComponent />
-            </body>
+            <body>{children}</body>
         </html>
     );
 }
