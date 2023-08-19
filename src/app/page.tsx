@@ -13,7 +13,7 @@ export default function Home() {
                 height: '80vh',
                 alignItems: 'center',
             }}>
-            <TypingElement message="Noo live events..." />
+            <TypingElement message="Noo upcoming events..." />
         </main>
     );
 }
