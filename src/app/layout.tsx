@@ -19,15 +19,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     property="og:description"
                     content="C318, Block C, Sushant Lok phase 1, near Fauji Market, Sector 43, Gurgaon."
                 />
-                <meta property="og:image" content="https://projectsushantlok.site/janeesh.jpg" />
+                <meta property="og:image" content="https://projectsushantlok.site/metaImage.png" />
 
-                <meta property="twitter:card" content="https://projectsushantlok.site/janeesh.jpg" />
+                <meta property="twitter:card" content="https://projectsushantlok.site/metaImage.png" />
                 <meta property="twitter:title" content="Project Sushant Lok - Be a part of the greatness" />
                 <meta
                     property="twitter:description"
                     content="C318, Block C, Sushant Lok phase 1, near Fauji Market, Sector 43, Gurgaon."
                 />
-                <meta property="twitter:image" content="https://projectsushantlok.site/janeesh.jpg" />
+                <meta property="twitter:image" content="https://projectsushantlok.site/metaImage.png" />
             </head>
             <body>
                 {children}
